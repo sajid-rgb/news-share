@@ -1,0 +1,9 @@
+.news-card{
+    border:1px solid grey;
+    border-radius:5px;
+    height:45vh;
+    box-shadow: 2px 2px 10px  grey;
+}
+.modal-content{
+    border:none;
+}
