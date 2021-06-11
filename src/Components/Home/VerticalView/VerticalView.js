@@ -4,6 +4,8 @@ import './VerticalView.css'
 import SingleNews from '../../SingleNews/SingleNews'
 import { useState } from 'react';
 import { Modal, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 const VerticalView = ({ news, handleRemoveNews }) => {
     const { title, summary, published, id } = news;
     const newSummary = summary && summary.split('', 60)
@@ -23,7 +25,9 @@ const VerticalView = ({ news, handleRemoveNews }) => {
     }
     return (
         <div className='news-card mt-4 p-4'>
-            <button className='btn btn-danger' onClick={() => handleRemoveNews(id)}>Close</button>
+            <div className='text-center mt-1 mb-2'>
+                <button className='btn btn-muted text-danger' style={{ border: '1px solid black' }} onClick={() => handleRemoveNews(id)}><FontAwesomeIcon icon={faTimes} /></button>
+            </div>
 
             <h5>{title}</h5>
             <p>{newSummary}......</p>
@@ -33,7 +37,7 @@ const VerticalView = ({ news, handleRemoveNews }) => {
             {
                 isShow &&
                 <Modal show={show} onHide={handleClose} animation={false} >
-                    <Modal.Dialog style={{ width: '100%', padding: '10px',border:'none' }}>
+                    <Modal.Dialog style={{ width: '100%', padding: '10px', border: 'none' }}>
                         <SingleNews />
                     </Modal.Dialog>
                 </Modal>

@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { Modal } from 'react-bootstrap';
 import Contact from '../../Feedback/FeedBack'
+import man from '../../../images/man.jpeg'
 import './SideBar.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGripVertical, faSlidersH } from '@fortawesome/free-solid-svg-icons';
+
 const SideBar = ({ isToggle, setIsToggle }) => {
     const [isShow, setIsShow] = useState(false)
     const [show, setShow] = useState(false);
@@ -19,10 +23,10 @@ const SideBar = ({ isToggle, setIsToggle }) => {
             <div className="col-md-12 col-6 mt-4">
                 <div className='row container mb-1 sidebar-first-div'>
                     <div className='col-md-4'>
-                        <h6>Ok</h6>
+                        <img src={man} className='img-fluid rounded-circle mt-4' style={{height:'100px',width:'150px'}} />
                     </div>
-                    <div className='col-md-8'>
-                        <h5>Hi Rider</h5>
+                    <div className='col-md-8 mt-5'>
+
                         <p>Here's your News</p>
 
                     </div>
@@ -32,8 +36,8 @@ const SideBar = ({ isToggle, setIsToggle }) => {
                 <div className='d-flex flex-column container mt-4 sidebar-first-div'>
                     <h3 className='mt-4 text-center'>View Toggle</h3>
                     <div className='d-flex align-items-center justify-content-center mb-4'>
-                        <button className='btn btn-success' onClick={() => setIsToggle(true)}>H</button>
-                        <button className='btn btn-primary' onClick={() => setIsToggle(false)}>V</button>
+                        <button className='btn btn-success' onClick={() => setIsToggle(true)}><FontAwesomeIcon icon={faSlidersH} /></button>
+                        <button className='btn btn-primary' onClick={() => setIsToggle(false)}><FontAwesomeIcon icon={faGripVertical} /></button>
                     </div>
                 </div>
             </div>

@@ -4,11 +4,14 @@
     border-bottom-right-radius: 5px;
     padding: 0px;
     width: 100%;
+
     
 }
 .sidebar-first-div{
     background-color: white;
     border-radius: 10px;
+    height: 150px;
+
     
 
 }

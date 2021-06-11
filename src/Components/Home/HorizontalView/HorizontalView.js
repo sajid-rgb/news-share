@@ -2,7 +2,10 @@ import { Modal } from 'react-bootstrap';
 import React, { useContext, useState } from 'react';
 import { IdContext } from '../../../App';
 import SingleNews from '../../SingleNews/SingleNews'
-const VerticalView = ({ news, handleRemoveNews }) => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import '../VerticalView/VerticalView.css'
+import { faCross, faTimes } from '@fortawesome/free-solid-svg-icons';
+const HorizontalView = ({ news, handleRemoveNews }) => {
     const { title, summary, published, id } = news;
     const newSummary = summary && summary.split('', 60)
     const [isShow, setIsShow] = useState(false)
@@ -25,7 +28,7 @@ const VerticalView = ({ news, handleRemoveNews }) => {
                 <button className="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => handleShowNews(id)}>More...</button>
             </div>
             <div className='ms-3 mt-5'>
-                <button className='btn btn-danger ' onClick={() => handleRemoveNews(id)}>Close</button>
+                <button className='btn btn-muted rounded-circle text-danger' style={{ border: '1px solid black' }} onClick={() => handleRemoveNews(id)}><FontAwesomeIcon icon={faTimes} /></button>
             </div>
 
             {
@@ -44,4 +47,4 @@ const VerticalView = ({ news, handleRemoveNews }) => {
     );
 };
 
-export default VerticalView;
+export default HorizontalView;

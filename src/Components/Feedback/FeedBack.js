@@ -1,16 +1,13 @@
 import { Modal } from 'bootstrap';
 import React from 'react';
-import SideBar from '../Home/SideBar/SideBar'
+import isEmail from 'validator/lib/isEmail';
+import validator from 'validator';
 const FeedBack = () => {
     return (
         <div className='row'>
 
-            <div className="col-md-5">
-
-                <SideBar />
-
-            </div>
-            <div className="col-md-7">
+            
+            <div className="col-12">
                 <h3>Thank you so much</h3>
                 <p><small>Please provide the below details</small></p>
                 <p>First Name</p>
